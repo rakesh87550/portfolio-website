@@ -1,24 +1,23 @@
 <?php
-    // database connection
-    $conn = mysqli_connect("localhost", "root", "", "portfolio") or mysqli_errno($conn);
-    $msg = "";
-    if(isset($_POST['submit']))
-    {
-        $name = mysqli_real_escape_string($conn, $_POST['name']);
-        $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $subject = mysqli_real_escape_string($conn, $_POST['subject']);
-        $message = mysqli_real_escape_string($conn, $_POST['message']);
-        
-        $sql = "INSERT INTO contact(name, email, subject, msg)VALUES('$name', '$email', '$subject', '$message')";
-        if(mysqli_query($conn, $sql))
-        {
-            $msg = "Successfully sent message";
-        }
+// database connection
+$conn = mysqli_connect("localhost", "root", "", "portfolio") or mysqli_errno($conn);
+$msg = "";
+if (isset($_POST['submit'])) {
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $subject = mysqli_real_escape_string($conn, $_POST['subject']);
+    $message = mysqli_real_escape_string($conn, $_POST['message']);
+
+    $sql = "INSERT INTO contact(name, email, subject, msg)VALUES('$name', '$email', '$subject', '$message')";
+    if (mysqli_query($conn, $sql)) {
+        $msg = "Successfully sent message";
     }
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,6 +27,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- jquery cdn -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- typed script -->
@@ -37,23 +37,26 @@
     <!-- owl carousel script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- owl carousel cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 </head>
+
 <body>
     <!-- scroll top button -->
     <div class="scroll-up-btn">
         <div class="fas fa-angle-up"></div>
     </div>
 
-    <!-- start navbar section -->   
+    <!-- start navbar section -->
     <nav class="navbar">
         <div class="max-width">
             <ul class="menu1">
-                <li><a href="http://rakeshsaha.unaux.com/">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
             </ul>
-            <div class="logo"><a href="http://rakeshsaha.unaux.com/"><<span>Rakesh Saha</span>/></a></div>
+            <div class="logo"><a href="http://rakeshsaha.unaux.com/">
+                    <<span>Rakesh Saha</span>/>
+                </a></div>
             <ul class="menu2">
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -73,7 +76,14 @@
                 <div class="text-1">Hello, My Name Is</div>
                 <div class="text-2">Rakesh Saha</div>
                 <div class="text-3">And I'm a <span class="typing"></span></div>
-                <a href="https://www.linkedin.com/in/rakesh-saha-30a427211/" target="_blank">Hire Me</a>
+                <!-- <a href="https://www.linkedin.com/in/rakesh-saha-30a427211/" target="_blank" class="hire_button">Hire Me</a> -->
+
+                <!-- start social links -->
+                <div class="social_icons">
+                    <a href="https://drive.google.com/file/d/1iRUwzQ6LUv0FYqSSd2DLIgLsRMyierR6/view?usp=sharing" target="_blank" class="fa fa-google"></a>
+                    <a href="https://www.linkedin.com/in/rakesh-saha-30a427211/" target="_blank" class="fa fa-linkedin"></a>
+                    <a href="https://github.com/rakesh87550" target="_blank" class="fa fa-github"></a>
+                </div>
             </div>
         </div>
     </section>
@@ -89,10 +99,10 @@
                 </div>
                 <div class="column right">
                     <div class="text">I'm Rakesh and I'm a <span class="typing-2"></span></div>
-                    <p>I Student of 2nd year Computer Science & Engineering and passionate about web UI/UX.I have done my 6 months internship at <b>ENCODERS UNLIMITED</b> as a web developer and created some awesome projects like Online examination system, Online taxi booking system. I am a fast learner and have a strong attitude to learn and to teach as well.</p>
+                    <p>I am a 4th year student of Computer Science & Engineering and passionate about web UI/UX. Now I am working as a Frontend Developer Intern at <b>Arachnomesh Technologies</b>. I am a fast learner and have a strong attitude to learn and to teach as well.</p>
 
                     <p>Interested to work with an organization that can give me an opportunity to work in an Innovative, competitive and challenging environment for developing my skills.</p>
-                    <a href="Rakesh's Resume.pdf" download>Download CV</a>
+                    <a href="Rakesh_Saha_CV.pdf" download>Download CV</a>
                 </div>
             </div>
         </div>
@@ -107,22 +117,22 @@
                 <div class="card">
                     <div class="box">
                         <i class="fas fa-paint-brush"></i>
-                        <div class="text">Web Designing</div>
-                        <p>I am using HTML, CSS, JAVASCRIPT, JQUERY, BOOTSTRAP to design my awesome looking webpages.</p>
+                        <div class="text">Frontend Development</div>
+                        <p>I am using Html5, Css3, Tailwind CSS, Material UI, Bootstrap to design my awesome looking webpages.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="box">
                         <i class="fas fa-chart-line"></i>
-                        <div class="text">Web Development</div>
-                        <p>I am using PHP and MYSQL to develop my prjects like online examination system, online taxi booking system etc.</p>
+                        <div class="text">Backend Development</div>
+                        <p>I am using CodeIgniter, Php, MySql, Rest API as a backend to develop my projects like online examination system, online taxi booking system etc.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="box">
                         <i class="fas fa-code"></i>
                         <div class="text">User Experience</div>
-                        <p>I am using JAVASCRIPT, JQUERY to make user experience very fast and reliable.</p>
+                        <p>I am using ReactJS, NextJS, Redux, TypeScript, JavaScript, jquery to make user experience very fast and reliable.</p>
                     </div>
                 </div>
             </div>
@@ -137,49 +147,52 @@
             <div class="skills-content">
                 <div class="column left">
                     <div class="text">My Creative <span>Skills & Experience</span></div>
-                    <p>I Student of 2nd year Computer Science & Engineering and passionate about web UI/UX.I have done my 6 months internship at encoders unlimited as a web developer and created some awesome projects like Online examination system, Online taxi booking system.</p>
+                    <p>I am a 4th year student of Computer Science & Engineering and passionate about web UI/UX. Now I am working as a Frontend Developer Intern at <b>Arachnomesh Technologies</b>. I am a fast learner and have a strong attitude to learn and to teach as well.</p>
                     <p>I am also love to work on wordpress development.</p>
-                    <a href="https://www.linkedin.com/in/rakesh-saha-30a427211/" target="_blank">Read More</a>
+                    <!-- start social links -->
+                    <a href="https://drive.google.com/file/d/1iRUwzQ6LUv0FYqSSd2DLIgLsRMyierR6/view?usp=sharing" target="_blank" class="fa fa-google"></a>
+                    <a href="https://www.linkedin.com/in/rakesh-saha-30a427211/" target="_blank" class="fa fa-linkedin"></a>
+                    <a href="https://github.com/rakesh87550" target="_blank" class="fa fa-github"></a>
                 </div>
                 <div class="column right">
                     <div class="bars">
                         <div class="info">
-                          <span>HTML</span>
+                            <span>ReactJS</span>
                         </div>
                         <div class="progress-line html">
-                          <span></span>
+                            <span></span>
                         </div>
                     </div>
                     <div class="bars">
                         <div class="info">
-                          <span>CSS</span>
+                            <span>NextJS</span>
                         </div>
                         <div class="progress-line css">
-                          <span></span>
+                            <span></span>
                         </div>
                     </div>
                     <div class="bars">
                         <div class="info">
-                          <span>JavaScript</span>
+                            <span>TypeScript</span>
                         </div>
                         <div class="progress-line js">
-                          <span></span>
+                            <span></span>
                         </div>
                     </div>
                     <div class="bars">
                         <div class="info">
-                          <span>PHP</span>
+                            <span>CodeIgniter</span>
                         </div>
                         <div class="progress-line php">
-                          <span></span>
+                            <span></span>
                         </div>
                     </div>
                     <div class="bars">
                         <div class="info">
-                          <span>MySQL</span>
+                            <span>MySQL</span>
                         </div>
                         <div class="progress-line mysql">
-                          <span></span>
+                            <span></span>
                         </div>
                     </div>
                 </div>
@@ -193,14 +206,14 @@
         <div class="max-width">
             <h2 class="title">My Projects</h2>
             <div class="carousel owl-carousel">
-                <div class="card">
+                <!-- <div class="card">
                     <div class="box">
                         <img src="img/project1.PNG" alt="">
                         <div class="text">Taxi Booking System</div>
                         <p>This is a online taxi booking system with instamojo payment gateway.</p>
                         <a href="https://sometaxi.com/" target="_blank">View Project</a>
                     </div>
-                </div>
+                </div> -->
                 <div class="card">
                     <div class="box">
                         <img src="img/project2.PNG" alt="">
@@ -217,20 +230,30 @@
                         <a href="https://encodersunlimited.com/Corona_update" target="_blank">View Project</a>
                     </div>
                 </div>
-                <!--<div class="card">
+                <div class="card">
                     <div class="box">
                         <img src="img/project4.PNG" alt="">
-                        <div class="text">Someone name</div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <div class="text">Grade Finder Website</div>
+                        <p>This is a javascript based website to find the grade of examination.</p>
+                        <a href="https://find-grade.netlify.app/" target="_blank">View Project</a>
                     </div>
                 </div>
                 <div class="card">
                     <div class="box">
                         <img src="img/project5.PNG" alt="">
-                        <div class="text">Someone name</div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <div class="text">Facebook Login Page</div>
+                        <p>Facebook login page using HTML5, CSS3, JavaScript, Bootstrap4.</p>
+                        <a href="https://facebook99.netlify.app/" target="_blank">View Project</a>
                     </div>
-                </div>-->
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="img/project6.PNG" alt="">
+                        <div class="text">Loan Calculator Website</div>
+                        <p>This is a javascript based website to find the monthly payment for loan amount.</p>
+                        <a href="https://loan-amont.netlify.app/" target="_blank">View Project</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -297,10 +320,11 @@
     <!-- ends contact section -->
     <!-- footer section start -->
     <footer>
-        <span>Created By <a target="_blank" href="https://www.linkedin.com/in/rakesh-saha-30a427211/">Rakesh Saha</a> | <span class="far fa-copyright"></span> 2021 All rights reserved.</span>
+        <span>Created By <a target="_blank" href="https://www.linkedin.com/in/rakesh-saha-30a427211/">Rakesh Saha</a> | <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
     </footer>
-    
+
     <!-- custom js -->
     <script src="custom.js"></script>
 </body>
+
 </html>
